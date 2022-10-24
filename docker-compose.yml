@@ -43,6 +43,8 @@ services:
       - server
     ports:
       - "8333:8333" # http
+    labels:
+      shipyard.route: '/'
     healthcheck:
       test: curl --fail http://api-service:8333/healthcheck || exit 1;
       interval: 5s
